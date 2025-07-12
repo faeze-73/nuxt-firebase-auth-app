@@ -4,7 +4,7 @@
       <div class="text-center">
         <h1 class="mb-4 text-primary">Welcome to the authentication app.</h1>
         
-        <div v-if="!typedStore.getters['auth/isAuthenticated']" class="card mx-auto shadow" style="max-width: 400px;">
+        <b-card v-if="!typedStore.getters['auth/isAuthenticated']" class="card mx-auto shadow" style="max-width: 400px;">
           <div class="card-header bg-primary text-white text-center">
             <h5 class="mb-0">Start</h5>
           </div>
@@ -21,7 +21,7 @@
               </NuxtLink>
             </div>
           </div>
-        </div>
+        </b-card>
         
         <div v-else class="card mx-auto shadow" style="max-width: 400px;">
           <div class="card-header bg-success text-white text-center">
@@ -43,6 +43,7 @@
 <script setup lang="ts">
 import store from '../store'
 import type { StoreType } from '../store'
+
 const typedStore = store as StoreType
 
 // Initialize auth state
